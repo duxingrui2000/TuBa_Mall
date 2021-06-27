@@ -27,7 +27,7 @@ public class TuBaMallOrderController {
     @GetMapping("/orders")
     public String ordersPage(HttpServletRequest request) {
         request.setAttribute("path", "orders");
-        return "admin/newbee_mall_order";
+        return "admin/tuba_mall_order";
     }
     
     /**

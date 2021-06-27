@@ -1,7 +1,6 @@
-<!-- Copyright (c) 2019-2020 十三 all rights reserved. -->
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="mall/header::head-fragment('NewBee商城-首页','index')">
+<head th:replace="mall/header::head-fragment('TuBa商城-首页','index')">
 </head>
 <body>
 <header th:replace="mall/header::header-fragment"></header>
@@ -61,7 +60,7 @@
             <div class="swiper-button-next"></div>
         </div>
     </div>
-
+    <h2 style="width: 100%">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp为你推荐</h2>
     <div id="sub_banner">
         <!-- 已配置热销商品则显示配置内容 -->
         <th:block th:unless="${#lists.isEmpty(hotGoodses)}">
@@ -107,9 +106,9 @@
                     <li>
                         <a th:href="@{'/goods/detail/'+${newGoods.goodsId}}">
                             <img th:src="@{${newGoods.goodsCoverImg}}" th:alt="${newGoods.goodsName}">
-                            <p class="name" th:text="${newGoods.goodsName}">NewBeeMall</p>
-                            <p class="discount" th:text="${newGoods.goodsIntro}">NewBeeMall</p>
-                            <p class="item_price" th:text="${newGoods.sellingPrice}">NewBeeMall</p>
+                            <p class="name" th:text="${newGoods.goodsName}">TuBaMall</p>
+                            <p class="discount" th:text="${newGoods.goodsIntro}">TuBaMall</p>
+                            <p class="item_price" th:text="${newGoods.sellingPrice}">TuBaMall</p>
                         </a>
                     </li>
                 </th:block>
@@ -173,12 +172,12 @@
                                 新品
                             </div>
                             <img th:src="@{${recommendGoods.goodsCoverImg}}" th:alt="${recommendGoods.goodsName}">
-                            <p class="name" th:text="${recommendGoods.goodsName}">NewBeeMall</p>
-                            <p class="item_price" th:text="${recommendGoods.sellingPrice}">NewBeeMall</p>
+                            <p class="name" th:text="${recommendGoods.goodsName}">TuBaMall</p>
+                            <p class="item_price" th:text="${recommendGoods.sellingPrice}">TuBaMall</p>
                             <p class="counter">猜你喜欢</p>
                             <div class="comment">
-                                <p>新蜂精选</p>
-                                <p>好物也可以不贵</p>
+                                <p>图吧精选</p>
+                                <p>你值得拥有</p>
                             </div>
                         </a>
                     </li>
@@ -196,8 +195,8 @@
                         <p class="price">1499元</p>
                         <p class="counter">猜你喜欢</p>
                         <div class="comment">
-                            <p>新蜂精选</p>
-                            <p>好物也可以不贵</p>
+                            <p>图吧精选</p>
+                            <p>你值得拥有</p>
                         </div>
                     </a>
                 </li>
@@ -211,8 +210,8 @@
                         <p class="price">1499元</p>
                         <p class="counter">猜你喜欢</p>
                         <div class="comment">
-                            <p>新蜂精选</p>
-                            <p>好物也可以不贵</p>
+                            <p>图吧精选</p>
+                            <p>你值得拥有</p>
                         </div>
                     </a>
                 </li>
@@ -226,8 +225,8 @@
                         <p class="price">1499元</p>
                         <p class="counter">猜你喜欢</p>
                         <div class="comment">
-                            <p>新蜂精选</p>
-                            <p>好物也可以不贵</p>
+                            <p>图吧精选</p>
+                            <p>你值得拥有</p>
                         </div>
                     </a>
                 </li>
@@ -241,8 +240,8 @@
                         <p class="price">1499元</p>
                         <p class="counter">猜你喜欢</p>
                         <div class="comment">
-                            <p>新蜂精选</p>
-                            <p>好物也可以不贵</p>
+                            <p>图吧精选</p>
+                            <p>你值得拥有</p>
                         </div>
                     </a>
                 </li>
@@ -256,8 +255,8 @@
                         <p class="price">1499元</p>
                         <p class="counter">猜你喜欢</p>
                         <div class="comment">
-                            <p>新蜂精选</p>
-                            <p>好物也可以不贵</p>
+                            <p>图吧精选</p>
+                            <p>你值得拥有</p>
                         </div>
                     </a>
                 </li>
@@ -271,8 +270,8 @@
                         <p class="price">1499元</p>
                         <p class="counter">猜你喜欢</p>
                         <div class="comment">
-                            <p>新蜂精选</p>
-                            <p>好物也可以不贵</p>
+                            <p>图吧精选</p>
+                            <p>你值得拥有</p>
                         </div>
                     </a>
                 </li>
@@ -286,8 +285,8 @@
                         <p class="price">1499元</p>
                         <p class="counter">猜你喜欢</p>
                         <div class="comment">
-                            <p>新蜂精选</p>
-                            <p>好物也可以不贵</p>
+                            <p>图吧精选</p>
+                            <p>你值得拥有</p>
                         </div>
                     </a>
                 </li>
@@ -301,8 +300,8 @@
                         <p class="price">1499元</p>
                         <p class="counter">猜你喜欢</p>
                         <div class="comment">
-                            <p>新蜂精选</p>
-                            <p>好物也可以不贵</p>
+                            <p>图吧精选</p>
+                            <p>你值得拥有</p>
                         </div>
                     </a>
                 </li>
@@ -316,8 +315,8 @@
                         <p class="price">1499元</p>
                         <p class="counter">猜你喜欢</p>
                         <div class="comment">
-                            <p>新蜂精选</p>
-                            <p>好物也可以不贵</p>
+                            <p>图吧精选</p>
+                            <p>你值得拥有</p>
                         </div>
                     </a>
                 </li>
@@ -331,8 +330,8 @@
                         <p class="price">1499元</p>
                         <p class="counter">猜你喜欢</p>
                         <div class="comment">
-                            <p>新蜂精选</p>
-                            <p>好物也可以不贵</p>
+                            <p>图吧精选</p>
+                            <p>你值得拥有</p>
                         </div>
                     </a>
                 </li>

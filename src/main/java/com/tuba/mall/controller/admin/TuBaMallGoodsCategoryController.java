@@ -30,11 +30,11 @@ public class TuBaMallGoodsCategoryController {
         if (categoryLevel == null || categoryLevel < 1 || categoryLevel > 3) {
             return "error/error_5xx";
         }
-        request.setAttribute("path", "newbee_mall_category");
+        request.setAttribute("path", "tuba_mall_category");
         request.setAttribute("parentId", parentId);
         request.setAttribute("backParentId", backParentId);
         request.setAttribute("categoryLevel", categoryLevel);
-        return "admin/newbee_mall_category";
+        return "admin/tuba_mall_category";
     }
     
     /**

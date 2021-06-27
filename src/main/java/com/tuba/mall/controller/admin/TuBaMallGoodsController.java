@@ -3,11 +3,13 @@ package com.tuba.mall.controller.admin;
 import com.tuba.mall.common.Constants;
 import com.tuba.mall.common.ServiceResultEnum;
 import com.tuba.mall.common.TuBaMallCategoryLevelEnum;
+import com.tuba.mall.common.TuBaMallException;
 import com.tuba.mall.entity.GoodsCategory;
 import com.tuba.mall.entity.TuBaMallGoods;
 import com.tuba.mall.service.TuBaMallCategoryService;
 import com.tuba.mall.service.TuBaMallGoodsService;
 import com.tuba.mall.util.PageQueryUtil;
+import com.tuba.mall.util.PageResult;
 import com.tuba.mall.util.Result;
 import com.tuba.mall.util.ResultGenerator;
 import org.springframework.stereotype.Controller;
@@ -17,10 +19,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import javax.servlet.http.HttpSession;
+import java.util.*;
 
 @Controller
 @RequestMapping("/admin")
@@ -32,8 +32,20 @@ public class TuBaMallGoodsController {
     
     @GetMapping("/goods")
     public String goodsPage(HttpServletRequest request) {
-        request.setAttribute("path", "newbee_mall_goods");
-        return "admin/newbee_mall_goods";
+        request.setAttribute("path", "tuba_mall_goods");
+        return "admin/tuba_mall_goods";
+    }
+    
+    @GetMapping(value = "/goods/searchId")
+    public String  goodsSearch(@RequestParam("goodsId") String goodsId, @RequestParam Map<String, Object> params, HttpSession session){
+        Long id = Long.parseLong(goodsId);
+        return "redirect:/admin/goods/edit/"+id;
+    }
+    
+    @GetMapping("/goods/search")
+    public String goodsSearch(HttpServletRequest request){
+        request.setAttribute("path", "tuba_mall_goodsSearch");
+        return "admin/tuba_mall_goodsSearch";
     }
     
     @GetMapping("/goods/edit")
@@ -51,7 +63,7 @@ public class TuBaMallGoodsController {
                 request.setAttribute("secondLevelCategories", secondLevelCategories);
                 request.setAttribute("thirdLevelCategories", thirdLevelCategories);
                 request.setAttribute("path", "goods-edit");
-                return "admin/newbee_mall_goods_edit";
+                return "admin/tuba_mall_goods_edit";
             }
         }
         return "error/error_5xx";
@@ -111,7 +123,7 @@ public class TuBaMallGoodsController {
         }
         request.setAttribute("goods", tuBaMallGoods);
         request.setAttribute("path", "goods-edit");
-        return "admin/newbee_mall_goods_edit";
+        return "admin/tuba_mall_goods_edit";
     }
     
     /**

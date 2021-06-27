@@ -1,4 +1,3 @@
-<!-- Copyright (c) 2019-2020 十三 all rights reserved. -->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <header th:replace="admin/header::header-fragment">
@@ -45,19 +44,31 @@
                     </div> <!-- /.card-body -->
                     <div class="card-body">
                         <div class="grid-btn">
-                            <button class="btn btn-info" onclick="addGoods()"><i
-                                    class="fa fa-plus"></i>&nbsp;添加商品
-                            </button>
-                            <button class="btn btn-info" onclick="editGoods()"><i
-                                    class="fa fa-pencil-square-o"></i>&nbsp;修改商品
-                            </button>
-                            <button class="btn btn-success" onclick="putUpGoods()"><i
-                                    class="fa fa-arrow-up"></i>&nbsp;上架商品
-                            </button>
-                            <button class="btn btn-danger" onclick="putDownGoods()"><i
-                                    class="fa fa-arrow-down"></i>&nbsp;下架商品
+                            <button class="btn btn-info" onclick="searchGoods()"><i
+                                    class="fa fa-align-center"></i>&nbsp;根据商品id号搜索商品
                             </button>
                         </div>
+
+                        <form action="/admin/goods/searchId"+goodsId>
+                            请输入商品号:<br>
+                            <input type="text" name="goodsId" value="">
+                            <br>
+                            <input type="submit" value="搜索">
+                        </form>
+
+<!--                        <form id="searchForm" onsubmit="return false;" action="##">-->
+<!--                            <div class="">-->
+<!--                                <div class="login-info">商品名:&nbsp;<input class="login-info-input" type="text" name="goodsName"-->
+<!--                                                                         placeholder="请输入商品名" id="goodsName"/>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="login_submit">-->
+<!--                                <input class="submit" type="button" onclick="search()" value="立即搜索">-->
+<!--                            </div>-->
+<!--                        </form>-->
+
+
+
                         <table id="jqGrid" class="table table-bordered">
                         </table>
                         <div id="jqGridPager"></div>
@@ -76,12 +87,21 @@
 <script th:src="@{/admin/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
 <!-- AdminLTE App -->
 <script th:src="@{/admin/dist/js/adminlte.min.js}"></script>
-<!-- jqgrid -->
-<script th:src="@{/admin/plugins/jqgrid-5.5.2/jquery.jqGrid.min.js}"></script>
-<script th:src="@{/admin/plugins/jqgrid-5.5.2/grid.locale-cn.js}"></script>
 <!-- sweetalert -->
 <script th:src="@{/admin/plugins/sweetalert/sweetalert.min.js}"></script>
+<!-- ajaxupload -->
+<script th:src="@{/admin/plugins/ajaxupload/ajaxupload.js}"></script>
+<!-- wangEditor -->
+<script type="text/javascript" src="//unpkg.com/wangeditor/dist/wangEditor.min.js"></script>
 <script th:src="@{/admin/dist/js/public.js}"></script>
-<script th:src="@{/admin/dist/js/newbee_mall_goods.js}"></script>
+<script th:src="@{/admin/dist/js/newbee_mall_goods_edit.js}"></script>
 </body>
+<!--<script>-->
+<!--    function search() {-->
+<!--        var q = $('#goodsName').val();-->
+<!--        if (q && q != '') {-->
+<!--            window.location.href = '/admin/goods/search?goodsName=' + q;-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
 </html>

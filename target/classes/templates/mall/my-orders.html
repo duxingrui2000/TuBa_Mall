@@ -40,13 +40,13 @@
                                             <div class="order-detail">
                                                 <div class="order-summary">
                                                     <th:block th:if="${order.orderStatus<0}">
-                                                        <div class="order-status-closed">
+                                                        <div class="order-status-closed"></div>
                                                     </th:block>
                                                     <th:block th:if="${order.orderStatus==0}">
-                                                        <div class="order-status-need-pay">
+                                                        <div class="order-status-need-pay"></div>
                                                     </th:block>
                                                     <th:block th:if="${order.orderStatus>0}">
-                                                        <div class="order-status-success">
+                                                        <div class="order-status-success"></div>
                                                     </th:block>
                                                     <th:block th:text="${' '+order.orderStatusString}"></th:block>
                                                 </div>
@@ -83,7 +83,7 @@
                                                                     </div>
                                                                     <p class="name"><a target="_blank"
                                                                                        th:href="@{'/goods/detail/'+${item.goodsId}}"
-                                                                                       th:text="${item.goodsName}">newbee</a>
+                                                                                       th:text="${item.goodsName}">tuba</a>
                                                                     </p>
                                                                     <p class="price"
                                                                        th:text="${item.sellingPrice+'元 x '+item.goodsCount}">

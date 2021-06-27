@@ -31,7 +31,7 @@ public class TuBaMallGoodsIndexConfigController {
         
         request.setAttribute("path", indexConfigTypeEnum.getName());
         request.setAttribute("configType", configType);
-        return "admin/newbee_mall_index_config";
+        return "admin/tuba_mall_index_config";
     }
     
     /**

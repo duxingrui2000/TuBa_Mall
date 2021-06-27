@@ -24,8 +24,8 @@ public class TuBaMallCarouselController {
     
     @GetMapping("/carousels")
     public String carouselPage(HttpServletRequest request) {
-        request.setAttribute("path", "newbee_mall_carousel");
-        return "admin/newbee_mall_carousel";
+        request.setAttribute("path", "tuba_mall_carousel");
+        return "admin/tuba_mall_carousel";
     }
     
     /**

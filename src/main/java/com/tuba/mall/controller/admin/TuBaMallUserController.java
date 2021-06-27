@@ -21,7 +21,7 @@ public class TuBaMallUserController {
     @GetMapping("/users")
     public String usersPage(HttpServletRequest request) {
         request.setAttribute("path", "users");
-        return "admin/newbee_mall_user";
+        return "admin/tuba_mall_user";
     }
     
     /**

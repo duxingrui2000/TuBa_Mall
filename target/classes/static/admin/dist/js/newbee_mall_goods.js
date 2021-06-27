@@ -84,6 +84,13 @@ function addGoods() {
 }
 
 /**
+ * 搜索商品
+ */
+function searchGoods() {
+    window.location.href = "/admin/goods/search";
+}
+
+/**
  * 修改商品
  */
 function editGoods() {
