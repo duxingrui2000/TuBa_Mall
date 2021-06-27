@@ -1,0 +1,108 @@
+<!-- Copyright (c) 2019-2020 十三 all rights reserved. -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<header th:replace="admin/header::header-fragment">
+</header>
+<style>
+    .ui-jqgrid tr.jqgrow td {
+        white-space: normal !important;
+        height: auto;
+        vertical-align: text-top;
+        padding-top: 2px;
+    }
+
+    a {
+        color: #1baeae;
+        text-decoration: none;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+    }
+
+    a:hover {
+        color: white;
+        background-color: #1baeae;
+    }
+</style>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+    <!-- 引入页面头header-fragment -->
+    <div th:replace="admin/header::header-nav"></div>
+    <!-- 引入工具栏sidebar-fragment -->
+    <div th:replace="admin/sidebar::sidebar-fragment(${path})"></div>
+    <!-- Content Wrapper. Contains 图标content -->
+    <div class="content-wrapper">
+        <!-- Content Header (图标header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- Main content -->
+        <div class="content">
+            <div class="container-fluid">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">商品管理</h3>
+                    </div> <!-- /.card-body -->
+                    <div class="card-body">
+                        <div class="grid-btn">
+                            <button class="btn btn-info" onclick="searchGoods()"><i
+                                    class="fa fa-align-center"></i>&nbsp;根据商品id号搜索商品
+                            </button>
+                        </div>
+
+                        <form action="/admin/goods/searchId"+goodsId>
+                            请输入商品号:<br>
+                            <input type="text" name="goodsId" value="">
+                            <br>
+                            <input type="submit" value="搜索">
+                        </form>
+
+<!--                        <form id="searchForm" onsubmit="return false;" action="##">-->
+<!--                            <div class="">-->
+<!--                                <div class="login-info">商品名:&nbsp;<input class="login-info-input" type="text" name="goodsName"-->
+<!--                                                                         placeholder="请输入商品名" id="goodsName"/>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="login_submit">-->
+<!--                                <input class="submit" type="button" onclick="search()" value="立即搜索">-->
+<!--                            </div>-->
+<!--                        </form>-->
+
+
+
+                        <table id="jqGrid" class="table table-bordered">
+                        </table>
+                        <div id="jqGridPager"></div>
+                    </div><!-- /.card-body -->
+                </div>
+            </div><!-- /.container-fluid -->
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- 引入页脚footer-fragment -->
+    <div th:replace="admin/footer::footer-fragment"></div>
+</div>
+<!-- jQuery -->
+<script th:src="@{/admin/plugins/jquery/jquery.min.js}"></script>
+<!-- Bootstrap 4 -->
+<script th:src="@{/admin/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<!-- AdminLTE App -->
+<script th:src="@{/admin/dist/js/adminlte.min.js}"></script>
+<!-- sweetalert -->
+<script th:src="@{/admin/plugins/sweetalert/sweetalert.min.js}"></script>
+<!-- ajaxupload -->
+<script th:src="@{/admin/plugins/ajaxupload/ajaxupload.js}"></script>
+<!-- wangEditor -->
+<script type="text/javascript" src="//unpkg.com/wangeditor/dist/wangEditor.min.js"></script>
+<script th:src="@{/admin/dist/js/public.js}"></script>
+<script th:src="@{/admin/dist/js/newbee_mall_goods_edit.js}"></script>
+</body>
+<!--<script>-->
+<!--    function search() {-->
+<!--        var q = $('#goodsName').val();-->
+<!--        if (q && q != '') {-->
+<!--            window.location.href = '/admin/goods/search?goodsName=' + q;-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+</html>
